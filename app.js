@@ -17,6 +17,8 @@ app.get('/', function(request, response) {
     console.log(urlObject)
     newIdentity(urlObject);
 
+    response.sendStatus(200);
+
 }); //app.get
 
 
@@ -28,11 +30,20 @@ function newIdentity (urlObject){
     slack.setWebhook(urlObject.response_url);
 
 
-    //   /mySlashCommand catfish    'catfish' is stored in var userCommand
+    //   /mySlashCommand witnessprotection stores male or female
     var userCommand = urlObject.text.toLowerCase();
 
     if(userCommand !== "male" || userCommand !== "female") {
         //respond with error message
+        slack.webhook({
+            channel: urlObject.channel_name,
+            text: "Please enter either male or female and try again."
+        }, function(err, response) {
+            if (err){
+                console.log(err)
+            }
+        });
+
     }
 
     // API call
