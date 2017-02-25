@@ -1,17 +1,26 @@
 {
-  "name": "outboundhook",
+  "name": "slackbot",
   "version": "1.0.0",
+  "description": "Fun slack bot for a particular slash command",
   "main": "app.js",
-  "scripts": {
-    "start": "node app.js"
-  },
   "dependencies": {
-    "express": "^4.14.1",
+        "express": "^4.14.1",
     "request": "^2.79.0",
     "slack-node": "^0.1.8"
   },
   "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wesleylhandy/slackbot.git"
+  },
+  "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": ""
+  "bugs": {
+    "url": "https://github.com/wesleylhandy/slackbot/issues"
+  },
+  "homepage": "https://github.com/wesleylhandy/slackbot#readme"
 }
