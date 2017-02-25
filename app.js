@@ -33,7 +33,7 @@ function newIdentity (urlObject){
     //   /mySlashCommand witnessprotection stores male or female
     var userCommand = urlObject.text.toLowerCase();
 
-    if(userCommand !== "male" || userCommand !== "female") {
+    if(userCommand !== "male" && userCommand !== "female") {
         //respond with error message
         slack.webhook({
             channel: urlObject.channel_name,
